@@ -1,0 +1,4 @@
+{
+  "environment": "prod",
+  "target_schema": "workspace.silver"
+}

@@ -1,0 +1,4 @@
+{
+  "environment": "qa",
+  "target_schema": "workspace_qa.silver"
+}
