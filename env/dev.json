@@ -1,0 +1,4 @@
+{
+  "environment": "dev",
+  "target_schema": "workspace_dev.silver"
+}
