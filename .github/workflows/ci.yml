@@ -1,0 +1,30 @@
+name: CI - Repo Validation
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Validate repository structure
+        run: |
+          echo "Checking required folders..."
+          test -d src
+          test -d sql
+          test -d env
+          test -f src/silver/transform_sales_orders.py
+          test -f sql/merge_sales_orders.sql
+          test -f env/dev.json
+          test -f env/qa.json
+          test -f env/prod.json
+
+      - name: Print structure (debug)
+        run: |
+          ls -R
